@@ -29,7 +29,6 @@ void setup_adc() {
 
 void play_microphone_audio() {
     uint16_t mic_value = adc_read();
-    uint slice_num = pwm_gpio_to_slice_num(SPEAKER_PIN);
     pwm_set_gpio_level(SPEAKER_PIN, mic_value >> 4);
 }
 
